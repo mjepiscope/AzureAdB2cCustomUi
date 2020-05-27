@@ -24,6 +24,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{11A3C010-64F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{341A380D-C299-4EA4-9A46-C87342C26F03}"
 	ProjectSection(SolutionItems) = preProject
+		api.css = api.css
 		index.html = index.html
 		master.css = master.css
 		master.js = master.js
