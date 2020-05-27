@@ -33,16 +33,16 @@ div.bg-container {
     width: 100%;
 }
 
-    div.bg-container:after {
-        content: "";
-        background: #26358C;
-        opacity: 0.75;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-    }
+div.bg-container:after {
+    content: "";
+    background: #26358C;
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
 
 div.page-container {
     position: relative;
@@ -84,6 +84,10 @@ div.main-view {
 
 h2 {
     font-size: 24px;
+}
+
+p {
+    color: #f44336;
 }
 
 button {
