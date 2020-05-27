@@ -86,7 +86,7 @@ h2 {
     font-size: 24px;
 }
 
-p {
+div.error {
     color: #f44336;
 }
 
@@ -114,19 +114,19 @@ label {
     display: block;
 }
 
-div.entry-item {
+div.entry-item, div.number, div#codeVerification {
     width: 100%;
     padding-top: 20px;
     display: inline-block;
     position: relative;
     text-align: left;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 400;
     font-family: "Open Sans", sans-serif;
     border-bottom: 1px solid rgba(38, 53, 140, .5);
 }
 
-input[type=email], input[type=password] {
+input[type=email], input[type=password], input[type=text] {
     font: inherit;
     background: 0 0;
     color: currentColor;
@@ -142,12 +142,15 @@ input[type=email], input[type=password] {
 }
 
 a {
+    cursor: pointer;
+    color: #337ab7;
+}
+
+a#forgotPassword {
     position: absolute;
     bottom: -80px;
     right: 140px;
     clear: right;
-    cursor: pointer;
     float: right;
     text-align: right;
-    color: #337ab7;
 }
