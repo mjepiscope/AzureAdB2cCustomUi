@@ -1,0 +1,88 @@
+﻿*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    font-feature-settings: 'liga';
+    font-size: 14px;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+body {
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    background-color: #fff;
+}
+
+div.bg-container {
+    background: url(../../assets/images/login_bg.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+div.bg-container:after {
+    content: "";
+    background: #26358C;
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+div.page-container {
+    position: relative;
+    color: #fff;
+}
+
+div.header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    padding: 0 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+span.header-image {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+div.content {
+    color: #26358C;
+    display: block;
+    margin: auto;
+    width: 90%;
+    text-align: center;
+}
+
+div.main-view {
+    max-width: 480px;
+    margin: auto;
+    margin-top: 102px;
+    padding: 24px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+}
+
+div.page-title {
+    font-size: 32px;
+    height: 74px;
+}
