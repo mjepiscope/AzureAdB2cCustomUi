@@ -83,8 +83,7 @@ div.main-view {
 }
 
 h2 {
-    font-size: 32px;
-    height: 74px;
+    font-size: 24px;
 }
 
 button {
@@ -96,4 +95,55 @@ button {
     text-transform: uppercase;
     height: 46px;
     margin-top: 12px;
+    margin-bottom: 25px;
+}
+
+label {
+    display: none
+}
+
+.entry-item {
+    position: relative;
+    width: 100%;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    display: block;
+}
+
+div.entry-item {
+    width: 100%;
+    padding-top: 20px;
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Open Sans", sans-serif;
+    border-bottom: 1px solid rgba(38, 53, 140, .5);
+}
+
+input[type=email], input[type=password] {
+    font: inherit;
+    background: 0 0;
+    color: currentColor;
+    border: none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    vertical-align: bottom;
+    text-align: inherit;
+    margin-bottom: 5px;
+}
+
+a {
+    position: absolute;
+    bottom: -80px;
+    right: 140px;
+    clear: right;
+    cursor: pointer;
+    float: right;
+    text-align: right;
+    color: #337ab7;
 }
