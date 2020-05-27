@@ -1,10 +1,10 @@
-﻿div#api[data-name=Phonefactor] {
+﻿div#api[data-name="Phonefactor"] {
     padding-top: 30px;
 }
 
-div.entry-item, div.number, div#codeVerification {
+div.entry-item, div.phoneNumber input, div.number, div#codeVerification, select, option {
     width: 100%;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-bottom: 6px;
     display: inline-block;
     position: relative;
@@ -15,7 +15,18 @@ div.entry-item, div.number, div#codeVerification {
     border-bottom: 1px solid rgba(38, 53, 140, .5);
 }
 
-div.number {
+select {
+    background: 0 0;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+option {
+    font-size: 16px;
+}
+
+div.phoneNumber label, div.phoneNumber input, div.number {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
@@ -34,23 +45,27 @@ h2 {
     font-size: 24px;
 }
 
-label[for="logonIdentifier"], label[for="password"], label[for="number"] {
+label[for="logonIdentifier"], label[for="password"], label[for="number"], label.displayName {
     display: none
 }
 
 input[type=email], input[type=password], input[type=text] {
     font: inherit;
+    font-weight: normal;
     background: 0 0;
     color: currentColor;
     border: none;
     outline: 0;
     padding: 0;
-    margin: 0;
+    margin: 5px 0 5px 0;
     width: 100%;
     max-width: 100%;
     vertical-align: bottom;
     text-align: inherit;
-    margin-bottom: 5px;
+}
+
+input#verificationCode {
+    text-align: center;
 }
 
 a {
@@ -102,35 +117,26 @@ button:active {
     box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
 }
 
-button#verifyCode {
+button#verifyCode, button#verifyPhone {
     width: 45%;
-    float: left;
 }
 
-button#verifyPhone {
-    width: 45%;
-    float: right;
-}
-
-button#cancel {
-
-    padding: 0;
+button#retryCode {
+    color: #337ab7;
+    text-decoration: none;
     background: 0 0;
-    border: 0;
     background-color: transparent;
-    font-size: 1em;
-    color: #505050;
+    border: none;
     box-shadow: none;
-    text-align: left;
+    display: inline;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    outline-offset: 0;
+    text-decoration: underline;
     text-transform: none;
-}
-
-.buttons #cancel:before {
-    padding: 10px;
-    vertical-align: sub;
-    zoom: 90%;
-    display: inline-block;
-    content: url(https://mjepiscope.github.io/AzureAdB2cCustomUi/assets/images/left-arrow.svg);
+    width: auto;
 }
 
 .buttons #cancel {
@@ -146,10 +152,12 @@ button#cancel {
     width: auto;
     position: absolute;
     top: 170px;
+    /*V1*/
+    /*left: 330px;*/
 }
 
 .buttons #cancel:before {
-    padding: 10px;
+    padding: 10px 10px 10px 5px;
     vertical-align: sub;
     zoom: 90%;
     display: inline-block;
