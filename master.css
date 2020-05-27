@@ -91,7 +91,7 @@ div.error {
 }
 
 button {
-    background-color: #26358c;
+    background-color: #009fe3;
     color: #fff;
     width: 100%;
     font-size: 14px;
@@ -102,7 +102,7 @@ button {
     margin-bottom: 25px;
 }
 
-label {
+label[for="logonIdentifier"], label[for="password"], label[for="number"] {
     display: none
 }
 
