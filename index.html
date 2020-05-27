@@ -60,7 +60,7 @@
                         </form>
                     </div>-->
 
-                     <!--MFA Page
+                    <!--MFA Page
                     
                     <div id="api" data-name="Phonefactor" role="form">
                         <div class="intro">
@@ -138,6 +138,107 @@
                         <div class="buttons"><button id="verifyCode" class="disabled" style="display: none;">Send Code</button><button id="verifyPhone" class="disabled" style="display: none;">Call Me</button><button id="cancel">Cancel</button></div>
 
                     </div>-->
+                    
+                    <!--MFA Registered Phone Page 1
+                    
+                    <div id="api" data-name="Phonefactor">
+
+                        <div id="phonefactor_initial" role="form">
+
+
+                            <div class="intro">
+                                <p>
+                                    We have the following number on record for you. We can send a code via SMS or phone to authenticate you.
+                                </p>
+                            </div>
+                            <div class="errorText" id="errorMessage" style="display:none"></div>
+
+                            <div class="phoneNumbers" id="phoneNumbers">
+                                <div class="phoneNumber">
+                                    <label for="1">XXX-XXX-159</label>
+                                    <label class="displayName"> - Phone Number</label>
+                                </div>
+
+                            </div>
+                            <div id="codeVerification" style="display:none">
+                                <div>
+                                    <p>
+                                        Enter your verification code below, or <button id="retryCode" class="textButton">send a new code</button>
+                                    </p>
+                                    <input type="text" id="verificationCode" placeholder="Verification code">
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <button id="verifyCode" style="display:inline-block">Send Code</button>
+                                <button id="verifyPhone" style="display:inline-block">Call Me</button>
+                                <button id="cancel" style="display:inline-block">Cancel</button>
+                            </div>
+
+
+
+
+                        </div>
+
+                        <div class="dialing-modal">
+                            <div class="preloader">
+                                <img src="https://dccmpst.b2clogin.com/static/img/win8loader.gif" alt="Please wait">
+                            </div>
+                            <div id="dialing_blurb"></div>
+                            <div id="dialing_number"></div>
+                        </div>
+
+                    </div>-->
+                    
+                    <!--MFA Registered Phone Page 2
+                    
+                    <div id="api" data-name="Phonefactor">
+
+                        <div id="phonefactor_initial" role="form">
+
+
+                            <div class="intro">
+                                <p>
+                                    We have the following number on record for you. We can send a code via SMS or phone to authenticate you.
+                                </p>
+                            </div>
+                            <div class="errorText" id="errorMessage" style="display:none"></div>
+
+                            <div class="phoneNumbers" id="phoneNumbers">
+                                <div class="phoneNumber">
+                                    <label for="1">XXX-XXX-159</label>
+                                    <label class="displayName"> - Phone Number</label>
+                                </div>
+
+                            </div>
+                            <div id="codeVerification" style="display: block;">
+                                <div>
+                                    <p>
+                                        Enter your verification code below, or <button id="retryCode" class="textButton">send a new code</button>
+                                    </p>
+                                    <input type="text" id="verificationCode" placeholder="Verification code">
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <button id="verifyCode" style="display:inline-block" disabled="disabled">Verify Code</button>
+                                <button id="verifyPhone" style="display: none;">Call Me</button>
+                                <button id="cancel" style="display:inline-block">Cancel</button>
+                            </div>
+
+
+
+
+                        </div>
+
+                        <div class="dialing-modal">
+                            <div class="preloader">
+                                <img src="https://dccmpst.b2clogin.com/static/img/win8loader.gif" alt="Please wait">
+                            </div>
+                            <div id="dialing_blurb">We're sending you a text message at</div>
+                            <div id="dialing_number">XXX-XXX-159</div>
+                        </div>
+
+                    </div>-->
+
                 </div>
             </div>
         </div>

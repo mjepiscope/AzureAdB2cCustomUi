@@ -78,6 +78,7 @@ div.main-view {
     margin: auto;
     margin-top: 102px;
     padding: 24px;
+    padding-bottom: 36px;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 12px;
 }
