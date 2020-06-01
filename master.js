@@ -43,10 +43,9 @@ function hasErrorMessage() {
     var paragraphs = Array.prototype.slice.call(window.document.querySelectorAll('div.error p'), 0);
 
     for (var i = 0; i < paragraphs.length; i++) {
-        var p = paragraphs[i];
-
-        if (!p.textContent && p.parentElement.style.display === 'none') continue;
-        else return true;
+        if (!!paragraphs[i].textContent 
+            && paragraphs[i].parentElement.style.display !== 'none')
+            return true;
     }
 
     return false;
