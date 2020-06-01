@@ -45,7 +45,7 @@ function hasErrorMessage() {
     for (var i = 0; i < paragraphs.length; i++) {
         var p = paragraphs[i];
 
-        if (!p.textContent) continue;
+        if (!p.textContent && p.parent.style.display === 'none') continue;
         else return true;
     }
 
