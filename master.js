@@ -44,6 +44,7 @@ function hasErrorMessage() {
 
 function setupObservers(spinner) {
     setupParagraphObservers(spinner);
+    setupDivObservers(spinner);
 }
 
 function setupParagraphObservers(spinner) {
