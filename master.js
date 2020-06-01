@@ -17,17 +17,15 @@ function setupSpinner() {
 
     spinner.style.display = 'none';
 
-    var paragraphs = Array.prototype.slice.call(window.document.querySelectorAll('div.error p'), 0);
+    //var paragraphs = Array.prototype.slice.call(window.document.querySelectorAll('div.error p'), 0);
 
     buttons.forEach(function(b) {
         b.addEventListener('click',
             function() {
 
-                if (paragraphs.some(p => !!p.textContent)) {
+                if (!hasErrorMessage()) {
                     spinner.style.display = 'block';
                 }
-                
-                //spinner.style.display = 'block';
             });
     });
 
@@ -41,6 +39,19 @@ function setupSpinner() {
     //paragraphs.forEach(function(p) {
     //    pObserver.observe(p, {characterData: true, childList: true});
     //});
+}
+
+function hasErrorMessage() {
+    var paragraphs = Array.prototype.slice.call(window.document.querySelectorAll('div.error p'), 0);
+
+    for (var i = 0; i < paragraphs.length; i++) {
+        var p = paragraphs[i];
+
+        if (!p.textContent) continue;
+        else return true;
+    }
+
+    return false;
 }
 
 function initializeControls() {
