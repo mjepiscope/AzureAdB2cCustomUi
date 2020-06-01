@@ -55,7 +55,7 @@ function setupParagraphObservers(spinner) {
     var paragraphs = Array.prototype.slice.call(window.document.querySelectorAll('div.error p'), 0);
     
     paragraphs.forEach(function(p) {
-        pObserver.observe(p, {characterData: true, childList: true});
+        pObserver.observe(p, {characterData: true});
     });
 }
 
@@ -73,7 +73,7 @@ function setupDivObservers(spinner) {
     var divs = Array.prototype.slice.call(window.document.querySelectorAll('div#codeVerification'), 0);
     
     divs.forEach(function(d) {
-        dObserver.observe(d, {characterData: true, childList: true});
+        dObserver.observe(d, {attributes: true});
     });
 }
 
