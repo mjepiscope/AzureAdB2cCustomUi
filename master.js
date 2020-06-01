@@ -27,16 +27,7 @@ function setupSpinner() {
             });
     });
 
-    //Observe the paragraph
-    var pObserver = new window.MutationObserver(function(mutations) {
-        spinner.style.display = 'none';
-    }.bind(this));
-
-    var paragraphs = Array.prototype.slice.call(window.document.querySelectorAll('div.error p'), 0);
-    
-    paragraphs.forEach(function(p) {
-        pObserver.observe(p, {characterData: true, childList: true});
-    });
+    setupObservers(spinner);
 }
 
 function hasErrorMessage() {
@@ -49,6 +40,40 @@ function hasErrorMessage() {
     }
 
     return false;
+}
+
+function setupObservers(spinner) {
+    setupParagraphObservers(spinner);
+}
+
+function setupParagraphObservers(spinner) {
+    var pObserver = new window.MutationObserver(function(mutations) {
+        spinner.style.display = 'none';
+    }.bind(this));
+
+    var paragraphs = Array.prototype.slice.call(window.document.querySelectorAll('div.error p'), 0);
+    
+    paragraphs.forEach(function(p) {
+        pObserver.observe(p, {characterData: true, childList: true});
+    });
+}
+
+function setupDivObservers(spinner) {
+    var dObserver = new window.MutationObserver(function(mutations) {
+        if (mutations.length !== 1) return;
+
+        var div = mutations[0].target;
+
+        if (div.style.display !== 'none') {
+            spinner.style.display = 'none';
+        }
+    }.bind(this));
+
+    var divs = Array.prototype.slice.call(window.document.querySelectorAll('div#codeVerification'), 0);
+    
+    divs.forEach(function(d) {
+        dObserver.observe(d, {characterData: true, childList: true});
+    });
 }
 
 function initializeControls() {
