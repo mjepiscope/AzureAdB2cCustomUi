@@ -5,7 +5,7 @@
 div.entry-item, div.phoneNumber input, div.number, div#codeVerification, select, option {
     width: 100%;
     padding-top: 10px;
-    padding-bottom: 6px;
+    margin-bottom: 10px;
     display: inline-block;
     position: relative;
     text-align: left;
@@ -41,8 +41,9 @@ div.buttons {
     justify-content: space-between;
 }
 
-h2 {
-    font-size: 24px;
+div.intro h2 {
+    font-size: 32px;
+    font-weight: normal;
 }
 
 label[for="logonIdentifier"], label[for="password"], label[for="number"], label.displayName {
@@ -75,7 +76,7 @@ a {
 
 a#forgotPassword {
     position: absolute;
-    bottom: -85px;
+    bottom: -95px;
     right: 140px;
     clear: right;
     float: right;
