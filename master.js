@@ -17,23 +17,30 @@ function setupSpinner() {
 
     spinner.style.display = 'none';
 
+    var paragraphs = Array.prototype.slice.call(window.document.querySelectorAll('div.error p'), 0);
+
     buttons.forEach(function(b) {
         b.addEventListener('click',
             function() {
-                spinner.style.display = 'block';
+
+                if (paragraphs.some(p => !!p.textContent)) {
+                    spinner.style.display = 'block';
+                }
+                
+                //spinner.style.display = 'block';
             });
     });
 
     //Observe the paragraph
-    var pObserver = new window.MutationObserver(function(mutations) {
-        spinner.style.display = 'none';
-    }.bind(this));
+    //var pObserver = new window.MutationObserver(function(mutations) {
+    //    spinner.style.display = 'none';
+    //}.bind(this));
 
-    var paragraphs = Array.prototype.slice.call(window.document.querySelectorAll('div.error p'), 0);
+    //var paragraphs = Array.prototype.slice.call(window.document.querySelectorAll('div.error p'), 0);
     
-    paragraphs.forEach(function(p) {
-        pObserver.observe(p, {characterData: true, childList: true});
-    });
+    //paragraphs.forEach(function(p) {
+    //    pObserver.observe(p, {characterData: true, childList: true});
+    //});
 }
 
 function initializeControls() {
