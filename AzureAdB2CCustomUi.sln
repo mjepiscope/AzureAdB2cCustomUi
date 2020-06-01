@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{1D50E8B4-F78C-479D-89D2-84A84580B88D}"
 	ProjectSection(SolutionItems) = preProject
 		assets\images\cs_logo.svg = assets\images\cs_logo.svg
+		assets\images\favicon.ico = assets\images\favicon.ico
 		assets\images\left-arrow.svg = assets\images\left-arrow.svg
 		assets\images\login_bg.png = assets\images\login_bg.png
 	EndProjectSection
