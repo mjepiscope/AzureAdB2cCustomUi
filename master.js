@@ -126,11 +126,11 @@ function setupParagraphObservers(spinner) {
     var paragraphs = Array.prototype.slice.call(window.document.querySelectorAll('div.error p'), 0);
     
     paragraphs.forEach(function(p) {
-        setupParagraphObservers(spinner, p);
+        setupParagraphObserver(spinner, p);
     });
 }
 
-function setupParagraphObservers(spinner, p) {
+function setupParagraphObserver(spinner, p) {
     var pObserver = new window.MutationObserver(function() {
         spinner.style.display = 'none';
     }.bind(this));
