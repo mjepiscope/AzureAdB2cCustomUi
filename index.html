@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="https://mjepiscope.github.io/AzureAdB2cCustomUi/assets/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="https://mjepiscope.github.io/AzureAdB2cCustomUi/master.css" data-preload="true" />
     <link rel="stylesheet" type="text/css" href="https://mjepiscope.github.io/AzureAdB2cCustomUi/api.css" data-preload="true" />
-    <script language="javascript" type="text/javascript" src="https://mjepiscope.github.io/AzureAdB2cCustomUi/master.js" defer></script>
+    <script language="javascript" type="text/javascript" defer src="https://mjepiscope.github.io/AzureAdB2cCustomUi/master.js" data-preload="true"></script>
     <!--<link rel="stylesheet" type="text/css" href="master.css" data-preload="true" />
     <link rel="stylesheet" type="text/css" href="api.css" data-preload="true" />
     <script language="javascript" type="text/javascript" src="master.js" defer></script>-->
@@ -637,10 +637,10 @@
                                 <label for="verificationCode">Enter your verification code below, or </label>
                                 <a id="retryCode" tabindex="1">send a new code</a>
                             </div>
-                            <div class="error itemLevel" aria-hidden="true">
-                                <p role="alert"></p>
+                            <div class="error itemLevel" aria-hidden="true" style="display: none;">
+                                <p role="alert">The verification code you have entered does not match our records. Please try again, or request a new code.</p>
                             </div>
-                            <input type="text" role="textbox" id="verificationCode" maxlength="6" pattern="\d{6}">
+                            <input type="text" role="textbox" id="verificationCode" maxlength="6" pattern="\d{6}" aria-hidden="false" style="display: block;">
                         </div>
 
                         <div class="working"></div>
@@ -672,7 +672,7 @@
                                 <a id="retryCode" tabindex="1">send a new code</a>
                             </div>
                             <div class="error itemLevel" aria-hidden="true" style="display: none;">
-                                <p role="alert"></p>
+                                <p role="alert">The verification code you have entered does not match our records. Please try again, or request a new code.</p>
                             </div>
                             <input type="text" role="textbox" id="verificationCode" maxlength="6" pattern="\d{6}" aria-hidden="false" style="display: block;">
                         </div>

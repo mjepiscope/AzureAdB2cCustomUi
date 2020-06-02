@@ -34,6 +34,7 @@ div.phoneNumber label, div.phoneNumber input, div.number {
 
 div.error {
     color: #f44336;
+    font-weight: normal;
 }
 
 div.buttons {
