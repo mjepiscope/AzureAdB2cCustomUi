@@ -123,30 +123,18 @@ function setupSpinnerObservers(spinner) {
 }
 
 function setupParagraphObservers(spinner) {
-    var paragraphs = Array.prototype.slice.call(window.document.querySelectorAll('div.error p'), 0);
-    
-    paragraphs.forEach(function(p) {
-        setupParagraphObserver(spinner, p);
-    });
-}
-
-function setupParagraphObserver(spinner, p) {
     var pObserver = new window.MutationObserver(function() {
         spinner.style.display = 'none';
     }.bind(this));
 
-    pObserver.observe(p, {characterData: true});
-}
-
-function setupDivObservers(spinner) {
-    var divs = Array.prototype.slice.call(window.document.querySelectorAll('div#codeVerification, div#codeVerification div.error'), 0);
+    var paragraphs = Array.prototype.slice.call(window.document.querySelectorAll('div.error p'), 0);
     
-    divs.forEach(function(d) {
-        setupDivObserver(spinner, d);
+    paragraphs.forEach(function(p) {
+        pObserver.observe(p, {characterData: true});
     });
 }
 
-function setupDivObserver(spinner, div) {
+function setupDivObservers(spinner) {
     var dObserver = new window.MutationObserver(function(mutations) {
         if (mutations.length !== 1) return;
 
@@ -157,7 +145,11 @@ function setupDivObserver(spinner, div) {
         }
     }.bind(this));
 
-    dObserver.observe(div, {attributes: true});
+    var divs = Array.prototype.slice.call(window.document.querySelectorAll('div#codeVerification, div#codeVerification div.error'), 0);
+    
+    divs.forEach(function(d) {
+        dObserver.observe(d, {attributes: true, attributeFilter: ['style']});
+    });
 }
 
 function initializeControls() {
