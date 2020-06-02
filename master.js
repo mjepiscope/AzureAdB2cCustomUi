@@ -123,15 +123,19 @@ function setupSpinnerObservers(spinner) {
 }
 
 function setupParagraphObservers(spinner) {
+    var paragraphs = Array.prototype.slice.call(window.document.querySelectorAll('div.error p'), 0);
+    
+    paragraphs.forEach(function(p) {
+        setupParagraphObservers(spinner, p);
+    });
+}
+
+function setupParagraphObservers(spinner, p) {
     var pObserver = new window.MutationObserver(function() {
         spinner.style.display = 'none';
     }.bind(this));
 
-    var paragraphs = Array.prototype.slice.call(window.document.querySelectorAll('div.error p'), 0);
-    
-    paragraphs.forEach(function(p) {
-        pObserver.observe(p, {characterData: true});
-    });
+    pObserver.observe(p, {characterData: true});
 }
 
 function setupDivObservers(spinner) {
