@@ -136,19 +136,21 @@ function setupParagraphObservers(spinner) {
 
 function setupDivObservers(spinner) {
     var dObserver = new window.MutationObserver(function(mutations) {
-        if (mutations.length !== 1) return;
+        spinner.style.display = 'none';
+        
+        //if (mutations.length !== 1) return;
 
-        var div = mutations[0].target;
+        //var div = mutations[0].target;
 
-        if (div.style.display !== 'none') {
-            spinner.style.display = 'none';
-        }
+        //if (div.style.display !== 'none') {
+        //    spinner.style.display = 'none';
+        //}
     }.bind(this));
 
     var divs = Array.prototype.slice.call(window.document.querySelectorAll('div#codeVerification, div#codeVerification div.error'), 0);
     
     divs.forEach(function(d) {
-        dObserver.observe(d, {attributes: true, attributeFilter: ['style'], attributeOldValue: true });
+        dObserver.observe(d, {attributes: true, attributeFilter: ['style'] });
     });
 }
 
