@@ -87,7 +87,7 @@ function validateVerificationCode(textBox, spinner) {
 
     if (!pattern) return;
 
-    var isMatch = new RegExp(pattern).exec(pattern);
+    var isMatch = new RegExp(pattern).exec(textBox.value);
 
     if (isMatch) {
         spinner.style.display = 'block';
