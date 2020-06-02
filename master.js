@@ -148,7 +148,7 @@ function setupDivObservers(spinner) {
     var divs = Array.prototype.slice.call(window.document.querySelectorAll('div#codeVerification, div#codeVerification div.error'), 0);
     
     divs.forEach(function(d) {
-        dObserver.observe(d, {attributes: true, attributeFilter: ['style']});
+        dObserver.observe(d, {attributes: true, attributeFilter: ['style'], attributeOldValue: true });
     });
 }
 
