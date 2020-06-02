@@ -81,7 +81,7 @@ function verificationCodeEventHandler(event, verifyButton, textBox, spinner) {
 
 function validateVerificationCode(textBox, spinner) {
     // window.SETTINGS came from accessible Azure object
-    if (!textBox.value || textBox.value.length !== window.SETTINGS.pinLength) return;
+    if (!textBox.value || textBox.value.length !== window.SETTINGS.config.pinLength) return;
 
     var pattern = textBox.getAttribute("pattern");
 
