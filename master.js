@@ -26,8 +26,19 @@ function setupSpinner() {
 }
 
 function setupSpinnerTriggers(spinner) {
+    setupSigninEnterKeyTrigger(spinner);
     setupButtonTriggers(spinner);
     setupVerificationCodeTrigger(spinner);
+}
+
+function setupSigninEnterKeyTrigger(spinner) {
+    var txtPassword = window.document.querySelector('input#password');
+
+    if (!txtPassword) return;
+
+    txtPassword.addEventListener('keypress', function(event) {
+        if (event.which === 13) spinner.style.display = 'block';
+    });
 }
 
 function setupButtonTriggers(spinner) {
@@ -124,6 +135,14 @@ function setupParagraphObservers(spinner) {
 }
 
 function setupDivObservers(spinner) {
+    var divs = Array.prototype.slice.call(window.document.querySelectorAll('div#codeVerification, div#codeVerification div.error'), 0);
+    
+    divs.forEach(function(d) {
+        setupDivObserver(spinner, d);
+    });
+}
+
+function setupDivObserver(spinner, div) {
     var dObserver = new window.MutationObserver(function(mutations) {
         if (mutations.length !== 1) return;
 
@@ -134,11 +153,7 @@ function setupDivObservers(spinner) {
         }
     }.bind(this));
 
-    var divs = Array.prototype.slice.call(window.document.querySelectorAll('div#codeVerification, div#codeVerification div.error'), 0);
-    
-    divs.forEach(function(d) {
-        dObserver.observe(d, {attributes: true});
-    });
+    dObserver.observe(div, {attributes: true});
 }
 
 function initializeControls() {
