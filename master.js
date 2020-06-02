@@ -36,8 +36,10 @@ function setupSigninEnterKeyTrigger(spinner) {
 
     if (!txtPassword) return;
 
-    txtPassword.addEventListener('keypress', function(event) {
-        if (event.which === 13) spinner.style.display = 'block';
+    txtPassword.addEventListener('keyup', function(event) {
+        if (event.which === 13 && !hasErrorMessage()) {
+            spinner.style.display = 'block';
+        }
     });
 }
 
@@ -135,19 +137,11 @@ function setupParagraphObservers(spinner) {
 }
 
 function setupDivObservers(spinner) {
-    var dObserver = new window.MutationObserver(function(mutations) {
+    var dObserver = new window.MutationObserver(function() {
         spinner.style.display = 'none';
-        
-        //if (mutations.length !== 1) return;
-
-        //var div = mutations[0].target;
-
-        //if (div.style.display !== 'none') {
-        //    spinner.style.display = 'none';
-        //}
     }.bind(this));
 
-    var divs = Array.prototype.slice.call(window.document.querySelectorAll('div#codeVerification, div#codeVerification div.error'), 0);
+    var divs = Array.prototype.slice.call(window.document.querySelectorAll('div.error.pageLevel, div#codeVerification, div#codeVerification div.error'), 0);
     
     divs.forEach(function(d) {
         dObserver.observe(d, {attributes: true, attributeFilter: ['style'] });
