@@ -148,9 +148,18 @@ function setupDivObservers(spinner) {
     });
 }
 
+function focusOnPasswordElementIfExists() {
+    var element = window.document.querySelector('input#password');
+
+    if (!element) return;
+
+    element.focus();
+}
+
 function initializeControls() {
     changeSigninText();
     setupSpinner();
+    focusOnPasswordElementIfExists();
 }
 
 initializeControls();
