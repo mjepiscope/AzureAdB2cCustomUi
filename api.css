@@ -1,4 +1,9 @@
-﻿div#api[data-name="Phonefactor"] {
+﻿div#api {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+div#api[data-name="Phonefactor"] {
     padding-top: 30px;
 }
 
