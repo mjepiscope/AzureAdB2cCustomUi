@@ -52,8 +52,12 @@ div.intro h2 {
     font-weight: normal;
 }
 
-label[for="logonIdentifier"], label[for="password"], label[for="number"], label.displayName {
+label[for="logonIdentifier"], label[for="password"], label[for="number"], label.displayName, div#api[data-name="Unified"] div.social div.intro {
     display: none
+}
+
+div#api[data-name="Unified"] div.divider {
+    margin-top: 15px;
 }
 
 input[type=email], input[type=password], input[type=text] {
