@@ -2,6 +2,27 @@
  * This might not work as expected if the older or newer PLVs are used. - Kael
  */
 
+function addStyleSheetFile() {
+    var api = window.document.querySelector('div#api');
+    var link = window.document.querySelector('link#api-css');
+
+    if (!api || !api.dataset || !api.dataset.name || !link) return;
+
+    var href = "https://mjepiscope.github.io/AzureAdB2cCustomUi/";
+
+    switch (api.dataset.name.toLowerCase()) {
+        case "unified":
+            link.href = href + "unified.css";
+            break;
+        case "phonefactor":
+            link.href = href + "mfa.css";
+            break;
+        case "globalexception":
+            link.href = href + "error.css";
+            break;
+    }
+}
+
 function changeSigninText() {
     // Added slice to support IE 11
     var elements = Array.prototype.slice.call(window.document.querySelectorAll('div.intro h2, div.buttons button#next'), 0);    
@@ -157,6 +178,7 @@ function focusOnPasswordElementIfExists() {
 }
 
 function initializeControls() {
+    addStyleSheetFile();
     changeSigninText();
     setupSpinner();
     focusOnPasswordElementIfExists();

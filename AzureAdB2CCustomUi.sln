@@ -29,6 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		error.css = error.css
 		error.html = error.html
 		index.html = index.html
+		index.html.bak = index.html.bak
 		master.css = master.css
 		master.js = master.js
 		mfa.css = mfa.css
