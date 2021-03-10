@@ -8,19 +8,7 @@ function addStyleSheetFile() {
 
     if (!api || !api.dataset || !api.dataset.name || !link) return;
 
-    var href = "https://mjepiscope.github.io/AzureAdB2cCustomUi/";
-
-    switch (api.dataset.name.toLowerCase()) {
-        case "unified":
-            link.href = href + "unified.css";
-            break;
-        case "phonefactor":
-            link.href = href + "mfa.css";
-            break;
-        case "globalexception":
-            link.href = href + "error.css";
-            break;
-    }
+    link.href = "https://mjepiscope.github.io/AzureAdB2cCustomUi/" + api.dataset.name.toLowerCase();
 }
 
 function changeSigninText() {
