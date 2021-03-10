@@ -164,7 +164,7 @@ function setupDivObservers(spinner) {
 }
 
 function focusOnPasswordElementIfExists() {
-    var element = window.document.querySelector("input#password");
+    var element = window.document.querySelector("input#email");
 
     if (!element) return;
 
