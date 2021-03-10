@@ -31,7 +31,7 @@ div.intro h2 {
     font-weight: normal;
 }
 
-label[for="logonIdentifier"], label[for="password"], div#api div.social div.intro {
+label[for="signInName"], label[for="password"], div#api div.social div.intro {
     display: none
 }
 
