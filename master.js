@@ -3,29 +3,29 @@
  */
 
 function addStyleSheetFile() {
-    var api = window.document.querySelector('div#api');
-    var link = window.document.querySelector('link#api-css');
+    var api = window.document.querySelector("div#api");
+    var link = window.document.querySelector("link#api-css");
 
     if (!api || !api.dataset || !api.dataset.name || !link) return;
 
-    link.href = "https://mjepiscope.github.io/AzureAdB2cCustomUi/" + api.dataset.name.toLowerCase();
+    link.href = "https://mjepiscope.github.io/AzureAdB2cCustomUi/" + api.dataset.name.toLowerCase() + ".css";
 }
 
 function changeSigninText() {
     // Added slice to support IE 11
-    var elements = Array.prototype.slice.call(window.document.querySelectorAll('div.intro h2, div.buttons button#next'), 0);    
+    var elements = Array.prototype.slice.call(window.document.querySelectorAll("div.intro h2, div.buttons button#next"), 0);    
 
     elements.forEach(function(e) {
-        e.textContent = 'Log in';
+        e.textContent = "Log in";
     });
 }
 
 function setupSpinner() {
-    var spinner = window.document.querySelector('div.spinner-overlay');
+    var spinner = window.document.querySelector("div.spinner-overlay");
 
     if (!spinner) return;
 
-    spinner.style.display = 'none';
+    spinner.style.display = "none";
 
     // Triggers which show the spinner
     setupSpinnerTriggers(spinner);
@@ -41,48 +41,62 @@ function setupSpinnerTriggers(spinner) {
 }
 
 function setupSigninEnterKeyTrigger(spinner) {
-    var txtPassword = window.document.querySelector('input#password');
+    var txtPassword = window.document.querySelector("input#password");
 
     if (!txtPassword) return;
 
-    txtPassword.addEventListener('keyup', function(event) {
+    txtPassword.addEventListener("keyup", function(event) {
         if (event.which === 13 && !hasErrorMessage()) {
-            spinner.style.display = 'block';
+            spinner.style.display = "block";
         }
     });
 }
 
 function setupButtonTriggers(spinner) {
-    var divButtons = window.document.querySelector('div.buttons');
+    //var divButtons = window.document.querySelector("div.buttons");
 
-    if (!divButtons) return;
+    //if (!divButtons) return;
 
-    var buttons = Array.prototype.slice.call(divButtons.querySelectorAll('button#next, button#verifyCode, button#cancel'), 0);
+    //var buttons = Array.prototype.slice.call(divButtons.querySelectorAll("button#next, button#verifyCode, button#cancel, button.accountButton"), 0);
+
+    var buttons = [];
+
+    Array.prototype.concat.call(buttons,
+        getButtons("div.buttons", "button#next, button#verifyCode, button#cancel, button.accountButton"),
+        getButtons("div.options", "button.accountButton"));
 
     buttons.forEach(function(b) {
-        b.addEventListener('click',
+        b.addEventListener("click",
             function() {
 
                 if (!hasErrorMessage()) {
-                    spinner.style.display = 'block';
+                    spinner.style.display = "block";
                 }
             });
     });
 }
 
+function getButtons(divSelector, buttonSelector) {
+    var divElement = window.document.querySelector(divSelector);
+
+    if (!divElement) return [];
+
+    return Array.prototype.slice.call(divElement.querySelectorAll(buttonSelector), 0);
+}
+
 function setupVerificationCodeTrigger(spinner) {
-    var textBox = window.document.querySelector('input#verificationCode');
-    var verifyButton = window.document.querySelector('button#verifyCode');
+    var textBox = window.document.querySelector("input#verificationCode");
+    var verifyButton = window.document.querySelector("button#verifyCode");
 
     if (!textBox) return;
 
-    textBox.addEventListener('keyup', function(event) { verificationCodeEventHandler(event, verifyButton, textBox, spinner); });
-    textBox.addEventListener('paste', function(event) { verificationCodeEventHandler(event, verifyButton, textBox, spinner); });
+    textBox.addEventListener("keyup", function(event) { verificationCodeEventHandler(event, verifyButton, textBox, spinner); });
+    textBox.addEventListener("paste", function(event) { verificationCodeEventHandler(event, verifyButton, textBox, spinner); });
 }
 
 function verificationCodeEventHandler(event, verifyButton, textBox, spinner) {
     // Do not show spinner if verify code button is displayed (PLV 1.0.0)
-    if (!verifyButton || verifyButton.style.display !== 'none') return;
+    if (!verifyButton || verifyButton.style.display !== "none") return;
 
     // This code template came from the actual Azure Page
     if (event.type === "paste") {
@@ -112,16 +126,16 @@ function validateVerificationCode(textBox, spinner) {
     var isMatch = new RegExp(pattern).exec(textBox.value);
 
     if (isMatch) {
-        spinner.style.display = 'block';
+        spinner.style.display = "block";
     }
 }
 
 function hasErrorMessage() {
-    var paragraphs = Array.prototype.slice.call(window.document.querySelectorAll('div.error p'), 0);
+    var paragraphs = Array.prototype.slice.call(window.document.querySelectorAll("div.error p"), 0);
 
     for (var i = 0; i < paragraphs.length; i++) {
         if (!!paragraphs[i].textContent 
-            && paragraphs[i].parentElement.style.display !== 'none')
+            && paragraphs[i].parentElement.style.display !== "none")
             return true;
     }
 
@@ -135,10 +149,10 @@ function setupSpinnerObservers(spinner) {
 
 function setupParagraphObservers(spinner) {
     var pObserver = new window.MutationObserver(function() {
-        spinner.style.display = 'none';
+        spinner.style.display = "none";
     }.bind(this));
 
-    var paragraphs = Array.prototype.slice.call(window.document.querySelectorAll('div.error p'), 0);
+    var paragraphs = Array.prototype.slice.call(window.document.querySelectorAll("div.error p"), 0);
     
     paragraphs.forEach(function(p) {
         pObserver.observe(p, {characterData: true});
@@ -147,18 +161,18 @@ function setupParagraphObservers(spinner) {
 
 function setupDivObservers(spinner) {
     var dObserver = new window.MutationObserver(function() {
-        spinner.style.display = 'none';
+        spinner.style.display = "none";
     }.bind(this));
 
-    var divs = Array.prototype.slice.call(window.document.querySelectorAll('div.error.pageLevel, div#codeVerification, div#codeVerification div.error'), 0);
+    var divs = Array.prototype.slice.call(window.document.querySelectorAll("div.error.pageLevel, div#codeVerification, div#codeVerification div.error"), 0);
     
     divs.forEach(function(d) {
-        dObserver.observe(d, {attributes: true, attributeFilter: ['style'] });
+        dObserver.observe(d, {attributes: true, attributeFilter: ["style"] });
     });
 }
 
 function focusOnPasswordElementIfExists() {
-    var element = window.document.querySelector('input#password');
+    var element = window.document.querySelector("input#password");
 
     if (!element) return;
 
