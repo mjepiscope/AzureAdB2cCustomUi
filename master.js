@@ -53,15 +53,7 @@ function setupSigninEnterKeyTrigger(spinner) {
 }
 
 function setupButtonTriggers(spinner) {
-    //var divButtons = window.document.querySelector("div.buttons");
-
-    //if (!divButtons) return;
-
-    //var buttons = Array.prototype.slice.call(divButtons.querySelectorAll("button#next, button#verifyCode, button#cancel, button.accountButton"), 0);
-
-    var buttons = [];
-
-    Array.prototype.concat.call(buttons,
+    var buttons = Array.prototype.concat.call(
         getButtons("div.buttons", "button#next, button#verifyCode, button#cancel, button.accountButton"),
         getButtons("div.options", "button.accountButton"));
 
