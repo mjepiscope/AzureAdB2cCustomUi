@@ -15,7 +15,12 @@ div.attrEntry {
     border-bottom: 1px solid rgba(38, 53, 140, .5);
 }
 
-li.TextBox::marker, label[for="displayName"] {
+div#attributeList ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+label[for="displayName"], div.attrEntry a {
     display: none
 }
 
