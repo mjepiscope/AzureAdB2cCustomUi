@@ -32,6 +32,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		master.css = master.css
 		master.js = master.js
 		phonefactor.css = phonefactor.css
+		selfasserted.css = selfasserted.css
 		unified.css = unified.css
 	EndProjectSection
 EndProject

@@ -1,0 +1,72 @@
+﻿div#api {
+    padding-top: 30px;
+}
+
+div.entry-item {
+    width: 100%;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Open Sans", sans-serif;
+    border-bottom: 1px solid rgba(38, 53, 140, .5);
+}
+
+label[for="displayName"] {
+    display: none
+}
+
+input[type=text] {
+    font: inherit;
+    font-weight: normal;
+    background: 0 0;
+    color: currentColor;
+    border: none;
+    outline: 0;
+    padding: 0;
+    margin: 5px 0 5px 0;
+    width: 100%;
+    max-width: 100%;
+    vertical-align: bottom;
+    text-align: inherit;
+}
+
+a {
+    cursor: pointer;
+    color: #337ab7;
+}
+
+div.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons #cancel {
+    padding: 0;
+    background: 0 0;
+    border: 0;
+    background-color: transparent;
+    font-size: 1em;
+    color: #505050;
+    box-shadow: none;
+    text-align: left;
+    text-transform: none;
+    width: auto;
+    position: absolute;
+    top: 170px;
+}
+
+.buttons #cancel:before {
+    padding: 10px 10px 10px 5px;
+    vertical-align: sub;
+    zoom: 90%;
+    display: inline-block;
+    content: url(https://mjepiscope.github.io/AzureAdB2cCustomUi/assets/images/left-arrow.svg);
+}
+
+.buttons #cancel:hover {
+    color: #26358C !important;
+}
