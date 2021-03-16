@@ -20,6 +20,7 @@ select {
     border-top: none;
     border-right: none;
     border-left: none;
+    padding-bottom: 10px;
 }
 
 option {
