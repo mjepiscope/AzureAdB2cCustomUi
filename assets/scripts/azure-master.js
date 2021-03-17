@@ -45,7 +45,7 @@ function setupSigninEnterKeyTrigger(spinner) {
 
 function setupButtonTriggers(spinner) {
     var buttons = Array.prototype.concat.call(
-        getButtons("div.buttons", "button#next, button#verifyCode, button#cancel, button.accountButton"),
+        getButtons("div.buttons", "button#next, button#verifyCode, button#cancel, button.accountButton, button#continue"),
         getButtons("div.options", "button.accountButton"));
 
     buttons.forEach(function(b) {
