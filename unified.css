@@ -3,60 +3,8 @@
     flex-direction: column-reverse;
 }
 
-div.entry-item {
-    width: 100%;
-    padding-top: 10px;
-    margin-bottom: 10px;
-    display: inline-block;
-    position: relative;
-    text-align: left;
-    font-size: 20px;
-    font-weight: 400;
-    font-family: "Open Sans", sans-serif;
-    border-bottom: 1px solid rgba(38, 53, 140, .5);
-}
-
-div.error {
-    color: #f44336;
-    font-weight: normal;
-}
-
-div.buttons {
-    display: flex;
-    justify-content: space-between;
-}
-
-div.intro h2 {
-    font-size: 32px;
-    font-weight: normal;
-}
-
-label[for="signInName"], label[for="password"], div#api div.social div.intro {
-    display: none
-}
-
-div#api div.divider {
+div.divider {
     margin-top: 15px;
-}
-
-input[type=email], input[type=password], input[type=text] {
-    font: inherit;
-    font-weight: normal;
-    background: 0 0;
-    color: currentColor;
-    border: none;
-    outline: 0;
-    padding: 0;
-    margin: 5px 0 5px 0;
-    width: 100%;
-    max-width: 100%;
-    vertical-align: bottom;
-    text-align: inherit;
-}
-
-a {
-    cursor: pointer;
-    color: #337ab7;
 }
 
 a#forgotPassword {
@@ -66,39 +14,4 @@ a#forgotPassword {
     clear: right;
     float: right;
     text-align: right;
-}
-
-button {
-    cursor: pointer;
-    color: #fff;
-    background-color: #26358C;
-    -webkit-tap-highlight-color: transparent;
-    position: relative;
-    display: inline-block;
-    overflow: visible;
-    white-space: nowrap;
-    width: 100%;
-    height: 46px;
-    min-width: 64px;
-    line-height: 36px;
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-align: center;
-    vertical-align: baseline;
-    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-    box-sizing: border-box;
-    outline: 0;
-    margin-top: 12px;
-    margin-bottom: 12px;
-    padding: 0 16px;
-    border: none;
-    border-radius: 4px;
-    transform: translate3d(0,0,0);
-    transition: background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1);
-}
-
-button:active {
-    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
 }

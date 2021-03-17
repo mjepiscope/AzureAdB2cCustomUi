@@ -1,0 +1,47 @@
+﻿div#api {
+    padding-top: 30px;
+}
+
+select {
+    background: 0 0;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding-bottom: 10px;
+}
+
+option {
+    font-size: 16px;
+}
+
+div.phoneNumber label, div.phoneNumber input, div.number {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+input#verificationCode {
+    text-align: center;
+}
+
+button#verifyCode, button#verifyPhone {
+    width: 45%;
+}
+
+button#retryCode {
+    color: #337ab7;
+    text-decoration: none;
+    background: 0 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    display: inline;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    outline-offset: 0;
+    text-decoration: underline;
+    text-transform: none;
+    width: auto;
+}

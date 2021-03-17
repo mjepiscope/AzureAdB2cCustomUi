@@ -26,14 +26,33 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{341A380D-C299-4EA4-9A46-C87342C26F03}"
 	ProjectSection(SolutionItems) = preProject
 		api.css = api.css
-		globalexception.css = globalexception.css
 		index.html = index.html
 		index.html.bak = index.html.bak
 		master.css = master.css
 		master.js = master.js
-		phonefactor.css = phonefactor.css
-		selfasserted.css = selfasserted.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "styles", "styles", "{AC45F4AC-D0AF-41EC-8A7A-BBE30E578563}"
+	ProjectSection(SolutionItems) = preProject
+		azure-api-common.css = azure-api-common.css
+		azure-master.css = azure-master.css
+		global-exception.css = global-exception.css
+		phone-factor.css = phone-factor.css
+		self-asserted.css = self-asserted.css
 		unified.css = unified.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "static", "static", "{D84AA392-6D85-45C4-A514-D879A50219A2}"
+	ProjectSection(SolutionItems) = preProject
+		global-exception.html = global-exception.html
+		phone-factor.html = phone-factor.html
+		self-asserted.html = self-asserted.html
+		unified.html = unified.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{0D0A7C8A-4615-4200-B079-519511872316}"
+	ProjectSection(SolutionItems) = preProject
+		azure-master.js = azure-master.js
 	EndProjectSection
 EndProject
 Global
@@ -43,6 +62,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1D50E8B4-F78C-479D-89D2-84A84580B88D} = {6CEA2C7F-A77D-428F-BF7B-BDD8738D67C1}
 		{11A3C010-64F5-43FB-A014-9A7C2ED3A0B1} = {AE66BB00-3767-4884-909B-E5D7BBC4701B}
+		{AC45F4AC-D0AF-41EC-8A7A-BBE30E578563} = {6CEA2C7F-A77D-428F-BF7B-BDD8738D67C1}
+		{D84AA392-6D85-45C4-A514-D879A50219A2} = {6CEA2C7F-A77D-428F-BF7B-BDD8738D67C1}
+		{0D0A7C8A-4615-4200-B079-519511872316} = {6CEA2C7F-A77D-428F-BF7B-BDD8738D67C1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E9175E26-95CC-4379-9F78-8016D3DF016F}

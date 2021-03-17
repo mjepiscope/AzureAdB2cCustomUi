@@ -14,5 +14,5 @@ div.error-page-messagedetails {
 
 div.error-page-correlationid, div.error-page-messagedetails div, div.error-page-detail {
     font-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif !important;
-    font-size: 12px
+    font-size: 12px;
 }

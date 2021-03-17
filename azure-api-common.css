@@ -1,8 +1,4 @@
-﻿div#api {
-    padding-top: 30px;
-}
-
-div.attrEntry {
+﻿div.entry-item, div.phoneNumber input, div.number, div#codeVerification, select, option, div.attrEntry {
     width: 100%;
     padding-top: 10px;
     margin-bottom: 10px;
@@ -15,16 +11,26 @@ div.attrEntry {
     border-bottom: 1px solid rgba(38, 53, 140, .5);
 }
 
-div#attributeList ul {
-    list-style-type: none;
-    padding: 0;
+div.error {
+    color: #f44336;
+    font-weight: normal;
 }
 
-label[for="displayName"], div.attrEntry a {
+div.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+div.intro h2 {
+    font-size: 32px;
+    font-weight: normal;
+}
+
+label[for="signInName"], label[for="password"], div#api div.social div.intro, label[for="number"], label[for="displayName"], div.attrEntry a {
     display: none
 }
 
-input[type=text] {
+input[type=email], input[type=password], input[type=text] {
     font: inherit;
     font-weight: normal;
     background: 0 0;
@@ -42,11 +48,6 @@ input[type=text] {
 a {
     cursor: pointer;
     color: #337ab7;
-}
-
-div.buttons {
-    display: flex;
-    justify-content: space-between;
 }
 
 button {
