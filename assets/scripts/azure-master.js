@@ -154,8 +154,26 @@ function setupDivObservers(spinner) {
     });
 }
 
-function focusOnPasswordElementIfExists() {
-    var element = window.document.querySelector("input#email");
+function setupLoginTabOrder() {
+    var divApi = window.document.querySelector("div#api[data-name='Unified']");
+
+    if (!divApi) return;
+
+    setupTabOrder(divApi, "input#signInName", 1);
+    setupTabOrder(divApi, "input#password", 2);
+    setupTabOrder(divApi, "button#next", 3);
+}
+
+function setupTabOrder(divApi, selector, tabIndex) {
+    var element = divApi.querySelector(selector);
+
+    if (!element) return;
+
+    element.tabIndex = tabIndex;
+}
+
+function focusOnSignInElementIfExists() {
+    var element = window.document.querySelector("input#signInName");
 
     if (!element) return;
 
@@ -165,7 +183,8 @@ function focusOnPasswordElementIfExists() {
 function initializeControls() {
     changeSigninText();
     setupSpinner();
-    focusOnPasswordElementIfExists();
+    setupLoginTabOrder();
+    focusOnSignInElementIfExists();
 }
 
 initializeControls();

@@ -696,6 +696,38 @@
                         </div>
                     </div>-->
 
+                    <!-- Self Asserted Page (Display Name) -->
+                    <!--<div id="api" data-name="SelfAsserted">
+                        <div class="intro">
+                            <p>Please provide the following details.</p>
+                        </div>
+                        <form id="attributeVerification" action="JavaScript:void(0);">
+                            <div id="passwordEntryMismatch" class="error pageLevel" style="display: none;" aria-hidden="true">The password entry fields do not match. Please enter the same password in both fields and try again.</div>
+                            <div id="requiredFieldMissing" class="error pageLevel" style="display: none;" aria-hidden="true">A required field is missing. Please fill out all required fields and try again.</div>
+                            <div id="fieldIncorrect" class="error pageLevel" style="display: none;" aria-hidden="true">One or more fields are filled out incorrectly. Please check your entries and try again.</div>
+                            <div id="claimVerificationServerError" class="error pageLevel" style="display: none;" aria-hidden="true"></div>
+                            <div class="attr" id="attributeList">
+                                <ul>
+                                    <li class="TextBox">
+                                        <div class="attrEntry">
+                                            <label for="displayName">Display Name</label>
+                                            <div class="error itemLevel" role="alert"></div>
+                                            <input id="displayName" class="textInput" type="text" placeholder="Display Name" aria-label="Display Name" title="Your display name.">
+                                            <a href="javascript:void(0)" data-help="Your display name." class="helpLink tiny">What is this?</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="buttons">
+                                <button id="continue" type="submit" form="attributeVerification" aria-label="Continue">Continue</button>
+                                <button id="cancel" aria-label="Cancel" formnovalidate="">Cancel</button>
+                            </div>
+                            <div class="verifying-modal">
+                                <div id="verifying_blurb"></div>
+                            </div>
+                        </form>
+                    </div>-->
+
                 </div>
             </div>
         </div>
