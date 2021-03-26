@@ -162,6 +162,8 @@ function setupLoginTabOrder() {
     setupTabOrder(divApi, "input#signInName", 1);
     setupTabOrder(divApi, "input#password", 2);
     setupTabOrder(divApi, "button#next", 3);
+    setupTabOrder(divApi, "a#forgotPassword", 4);
+    setupTabOrder(divApi, "button.accountButton.firstButton", 5);
 }
 
 function setupTabOrder(divApi, selector, tabIndex) {
